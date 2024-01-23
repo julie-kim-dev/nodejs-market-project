@@ -1,6 +1,4 @@
-// import 'dotenv/config';
-import dotenv from 'dotenv';
-dotenv.config();
+import 'dotenv/config';
 
 import express from 'express';
 import connect from './schemas/index.js'; //MongoDB에 접속해야 하기 때문에 가지고 옴
