@@ -1,6 +1,8 @@
 import express from 'express';
 import Product from '../schemas/products.schema.js';
 
+const router = express.Router();
+
 // 상품 작성 POST
 router.post('/products', async (req, res, next) => {
   try {
@@ -138,7 +140,5 @@ router.delete('/products/:productId', async (req, res, next) => {
       .json({ message: '예기치 못한 에러가 발생하였습니다.' });
   }
 });
-
-const router = express.Router();
 
 export default router;
