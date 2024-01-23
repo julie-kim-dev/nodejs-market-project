@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const connect = () => {
   // mongoose.connect는 MongoDB 서버에 연결하는 메서드입니다.
   mongoose
-    .connect(process.env.MONGODB_URL, {
+    .connect(process.env.MONGODB_URI, {
       dbName: process.env.MONGODB_DB_NAME,
     })
     .then(() => console.log('MongoDB 연결에 성공하였습니다.'))
