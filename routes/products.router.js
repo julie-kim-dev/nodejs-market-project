@@ -65,7 +65,7 @@ router.get('/products/:productId', async (req, res, next) => {
     }
 
     // 목록 조회 결과를 클라이언트에게 반환
-    return res.status(200).json({ products });
+    return res.status(200).json({ product });
   } catch (error) {
     return res
       .status(500)
@@ -116,7 +116,7 @@ router.delete('/products/:productId', async (req, res, next) => {
         .status(400)
         .json({ message: '데이터 형식이 올바르지 않습니다.' });
     }
-    const prodectId = req.params.productId;
+    const productId = req.params.productId;
     const { password } = req.body;
     const product = await Product.findById(req.params.productId);
 
@@ -131,7 +131,7 @@ router.delete('/products/:productId', async (req, res, next) => {
         .json({ message: '상품을 수정할 권한이 존재하지 않습니다.' });
     }
 
-    await prodect.deleteOne({ id: productId });
+    await product.deleteOne({ id: productId });
 
     res.json({ message: '상품을 삭제하였습니다.' });
   } catch (error) {
